@@ -3,11 +3,11 @@
 Projeto exemplo para entendimento e criação de aplicações Django com Django REST Framework.
 
 1. Conceitos importantes.
-    1.1. Apis REST
-    1.2. Entendendo os Endpoints
-    1.3. Entendendo as Requests
-    1.4. Entendendo as Responses
-    1.5. Entendendo sobre segurança de APIs REST
+    1.1 Apis REST
+    1.2 Entendendo os Endpoints
+    1.3 Entendendo as Requests
+    1.4 Entendendo as Responses
+    1.5 Entendendo sobre segurança de APIs REST
 2. O que é o Django REST Framework
 3. Tópicos são seguidos de instruções para configuração e utilização do Django REST Framework.
 4. Ao final você encontrará as instruções para rodar o projeto completo em sua máquina.
