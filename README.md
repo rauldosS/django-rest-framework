@@ -1,9 +1,142 @@
 # 🏫 Escola
 
-Projeto exemplo para criação de aplicações Django com Django REST Framework.
+Projeto exemplo para entendimento e criação de aplicações Django com Django REST Framework.
 
-1. Os próximos tópicos são instruções para configuração e utilização do Django REST Framework.
-2. Ao final você encontrará as instruções para rodar o projeto em sua máquina.
+1. Conceitos importantes.
+    1.1. Apis REST
+    1.2. Entendendo os Endpoints
+    1.3. Entendendo as Requests
+    1.4. Entendendo as Responses
+    1.5. Entendendo sobre segurança de APIs REST
+2. O que é o Django REST Framework
+3. Tópicos são seguidos de instruções para configuração e utilização do Django REST Framework.
+4. Ao final você encontrará as instruções para rodar o projeto completo em sua máquina.
+
+---
+# 📚 Conceitos
+
+
+
+## 📕 API
+
+Interface de comunicação de aplicações de forma programática.
+
+## 📗 REST - Representation Stare Transfer
+
+HTTP é um design sem estado, ou seja, toda requisição é única. A responsabilidade de lembrar dos estados é do cliente.
+
+[Introdução às APIs REST](https://github.com/rauldosS/django-rest-framework/blob/main/docs/intro/02-introducao-as-apis-rest.pdf)
+
+## 📘 Endpoints
+
+### 🔖 Substantivos
+
+Gramática da língua portuguesa tem tudo a ver com endpoints, pois usamos <b>substantivos</b> e <b>verbos</b> para criá-los.
+
+- Resources (recursos)
+
+Um `'resource'` pode ser, por exemplo, um modelo da nossa aplicação:
+
+- Categorias
+- Produtos
+
+Nós fazemos as operações CRUD através de `URI` específicas na nossa aplicação, por exemplo:
+
+- sistema.com.br<b>/api/v1/produtos</b>
+- sistema.com.br<b>/api/v1/categorias</b>
+
+`Estas URIs são os endpoints`
+
+### 🔖 Boas práticas na criação de endpoints
+
+Um <b>endpoint</b> pode representar uma coleção de registros ou um registro individual.
+
+<b>Exemplo:</b>
+
+<b>Coleção:</b> sistema.com.br/api/v1/produtos
+<b>Individual:</b> sistema.com.br/api/v1/produtos/42
+
+### 🔖 Verbos (CRUD)
+
+Indica uma ação.
+
+- `C` `Create` `POST`
+- `R` `Read` `GET`
+- `U` `Update` `PUT`
+- `D` `Delete` `DELETE`
+
+[Entendendo os Endpoints](https://github.com/rauldosS/django-rest-framework/blob/main/docs/intro/03-entendendo-os-endpoints.pdf)
+
+## 📙 Requests
+
+As requisições (requests) é a solicitação ao servidor.
+
+<b>Exemplo:</b>
+
+```shell
+/api/v1/produtos?order=desc&limit=10
+```
+
+Tudo que vem depois do `?` é chamado de `querystring`
+
+### 🔖 Cabeçalhos da request
+
+- Accept: Específica o formato de arquivo.
+- Accept-Language: Define lingua de retorno.
+- Cache-Control: Específica se o conteúdo pode ser consumido do cache e em quanto tempo o cache é atualizado.
+
+`application/json` define um padrão de retorno.
+
+### 🔖 Versão da API
+
+```shell
+/api/v1/produtos
+```
+```shell
+/api/v2/produtos
+```
+
+[Entendendo as Requests](https://github.com/rauldosS/django-rest-framework/blob/main/docs/intro/04-entendendo-as-requests.pdf)
+
+## 📘 Responses
+
+Preparar a Resposta.
+
+Detalhes avaliados da solicitação:
+
+- Na requisição existe query string?
+- Qual foi o verbo HTTP que realizou a ação?
+- Quai são os dados do cabeçalho?
+- Qual o formato requisitado?
+- Preparar os dados da coleção ou indivíduo do recurso solicitado.
+
+Dados retornados:
+
+- data (dados)
+- Cabeçalho
+    - Content-Type: Accept encaminhado.
+    - Las-Modified: Data de criação ou última modificação.
+    - Expires: Até quando este dado pode ser considerado atual
+    - Status: 200 OK (código de status HTTP)
+
+[Entendendo as Responses](https://github.com/rauldosS/django-rest-framework/blob/main/docs/intro/05-entendendo-as-responses.pdf)
+
+## 📘 Segurança
+
+- Fazendo uso de cache.
+- Limitar número de requisições por período (segundos).
+- Autenticação (quem você é)
+    - Token (chave publica)
+- Autorização (o que você pode fazer)
+
+[Entendendo sobre a segurança de APIs REST](https://github.com/rauldosS/django-rest-framework/blob/main/docs/intro/06-entendendo-sobre-a-seguranca-de-apis-rest.pdf)
+
+
+## 📘 Django REST Framework (DRF)
+
+`Model Serialization`, DRF mapeia os `Django Models` e provê uma facilidade muito grande a trabalhar com os objetos Python e serializar/deserializar para JSON.
+
+---
 
 # 🛠️ Instalação e configuração
 
@@ -90,11 +223,12 @@ avaliacoes = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
 
 ## 🔨 Paginação
 
+
 Em `escola/settings.py` adicione ao `REST_FRAMEWORK`:
 
 ```python
 REST_FRAMEWORK = {
-    ...
+    ...,
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 2
 }
@@ -110,7 +244,7 @@ Adiciona automaticamente 3 atributos ao retorno.
 }
 ```
 
-Obs: Em métodos sobrescritos você deverá adicionar manualmente a paginação conforme exemplo que ocorre em `CursoViewSet`:
+<b>Obs:</b> Em métodos sobrescritos você deverá adicionar manualmente a paginação conforme exemplo que ocorre em `CursoViewSet`:
 
 ```python
 @action(detail=True, methods=['get'])
@@ -128,6 +262,178 @@ Obs: Em métodos sobrescritos você deverá adicionar manualmente a paginação 
 ```
 
 # 🛠️ Configuração avançada
+
+Tópicos:
+
+1. Autenticação via Token
+2. Fazendo uso de permissões
+3. Limitando número de requisições com Throttling
+4. Customizando a validação dos dados
+5. Customizando a serialização dos dados
+
+## 🔨 Autenticação via Token
+
+Configurações em `escola/settings.py`:
+
+1. Adicionar aos INSTALLED_APPS:
+```python
+{
+    ...,
+    'rest_framework.authtoken',
+    ...
+}
+```
+
+2. Comentar autenticação via sessão do `REST_FRAMEWORK` e adicionar:
+```python
+'DEFAULT_AUTHENTICATION_CLASSES': (
+    # 'rest_framework.authentication.SessionAuthentication',
+    'rest_framework.authentication.TokenAuthentication',
+),
+```
+
+3. Realizar migração
+```shell
+python manage.py migrate
+```
+
+### 📍 Para sobrescrever o modelo User utilize
+
+```python
+from rest_framework.authtoken.models import Token
+from django.contrib.auth.models import User
+
+admin = User.objects.get(id=1)
+
+token = Token.objects.create(user=admin)
+
+print(token.key)
+```
+
+Token Admin: 11c573b2dab073aef36698a9600a43aa8cb70d99
+
+<b>Obs:</b> É possível realizar a criação via `Administração do Django`
+
+## 🔨 Fazendo uso de permissões
+
+Permissões dizem respeito aos verbos HTTP (CRUD) que o usuário tem permissão para executar.
+
+Através do `Administração do Django` é possível realizar essa configuração de permissão sobre um modelo específico para cada usuário sem tornar o usuário administrador.
+
+### 📍 Criação de sua própria classe que define permissões
+
+1. Criação de um arquivo chamado `permissions.py` no diretório do app
+    1.1 Exemplo em `cursos/permissions.py`
+2. Importação de módulo criado nas `views` e inserção no início do ViewSet
+    2.1 Exemplo em `cursos/views.py`
+
+```python
+from rest_framework import permissions
+
+class CursoViewSet(viewsets.ModelViewSet):
+    permission_classes = (
+        EhSuperUser,
+        permissions.DjangoModelPermissions,
+    ),
+    ...
+```
+
+## 🔨 Limitando número de requisições com Throttling
+
+Similar a permissões, porém ele vai limitar as requisições por um determinado período para os clientes.
+
+A configuração será global configurada no `REST_FRAMEWORK` em `cursos/settings.py`:
+
+- Anônimos podem fazer podem fazer 5 requisições por minuto e
+- Usuários autenticados podem fazer 10 requisições por minuto.
+
+```python
+{
+    ...,
+    'DEFAULT_THROTTLE_CLASSES': (
+        'rest_framework.throttling.AnonRateThrottle',
+        'rest_framework.throttling.UserRateThrottle',
+    ),
+    'DEFAULT_THROTTLE_RATES': {
+        'anon': '5/minute',  # second, day, month, year
+        'user': '10/minute'
+    }
+}
+```
+
+## 🔨 Customizando a validação dos dados
+
+<b>Restrição:</b> Avaliações não podem ser maior que 5 (avaliacao).
+
+<b>Criação de uma avaliação:</b> 
+
+```JSON
+{
+	"curso": 2,
+	"nome": "Maria da Silva",
+	"email": "maria@gmail.com",
+	"avaliacao": 9
+}
+```
+
+<b>Retorno:</b> 
+
+```JSON
+{
+	"avaliacao": [
+		"A avaliação precisa ser um inteiro entre 1 e 5"
+	]
+}
+```
+
+1. Em `cursos/seralizers.py` criar a validação para a classe
+    1.1 A função por padrão deve começar com `validate_`
+
+```python
+def validate_avaliacao(self, valor):
+    if valor in range(1, 6):  # 1, 2, 3, 4, 5
+        return valor
+    raise serializers.ValidationError('A avaliação precisa ser um inteiro entre 1 e 5')
+```
+
+## 🔨 Customizando a serialização dos dados
+
+Adicionar atributo no retorno com a `média das avaliações`
+
+1. Criar atributo e especificar o tipo
+```python
+media_avaliacoes = serializers.SerializerMethodField()
+```
+
+2. Adicionar na lista de dados que serão apresentados
+```python
+fields = (
+    'media_avaliacoes'
+)
+```
+
+3. Criar função 
+    3.1 Nome da função iniciado em _get e
+    3.2 Restante do nome é o atributo que será criado
+
+```python
+def get_media_avaliacoes(self, obj):
+    media = obj.avaliacoes.aggregate(Avg('avaliacao')).get('avaliacao__avg')
+
+    if media is None:
+        return 0
+    return round(media * 2) / 2
+```
+
+### 📍 Sugestão de performance
+
+Ao inves de criar uma função para atualizar a média em cada requisição, criar um campo no modelo e atualizar o campo a cada atualização.
+
+# 🛠️ Testando APIs
+
+# 🔨 Insominia
+
+[JSON de importação Insominia]()
 
 # 🔨 Funcionalidades
 
