@@ -48,16 +48,16 @@ HTTP é um design sem estado, ou seja, toda requisição é única. A responsabi
 
 ### 🔖 Substantivos
 
-Gramática da língua portuguesa tem tudo a ver com endpoints, pois usamos <b>substantivos</b> e <b>verbos</b> para criá-los.
+> Gramática da língua portuguesa tem tudo a ver com endpoints, pois usamos <b>substantivos</b> e <b>verbos</b> para criá-los.
 
 - Resources (recursos)
 
-Um `'resource'` pode ser, por exemplo, um modelo da nossa aplicação:
+> Um `'resource'` pode ser, por exemplo, um modelo da nossa aplicação:
 
 - Categorias
 - Produtos
 
-Nós fazemos as operações CRUD através de `URI` específicas na nossa aplicação, por exemplo:
+> Nós fazemos as operações CRUD através de `URI` específicas na nossa aplicação, por exemplo:
 
 - sistema.com.br<b>/api/v1/produtos</b>
 - sistema.com.br<b>/api/v1/categorias</b>
