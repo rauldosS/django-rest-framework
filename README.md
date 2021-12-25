@@ -50,7 +50,7 @@ HTTP é um design sem estado, ou seja, toda requisição é única. A responsabi
 
 > Gramática da língua portuguesa tem tudo a ver com endpoints, pois usamos <b>substantivos</b> e <b>verbos</b> para criá-los.
 
-- Resources (recursos)
+#### 🔖 Resources (recursos)
 
 > Um `'resource'` pode ser, por exemplo, um modelo da nossa aplicação:
 
@@ -66,12 +66,16 @@ HTTP é um design sem estado, ou seja, toda requisição é única. A responsabi
 
 ### 🔖 Boas práticas na criação de endpoints
 
-Um <b>endpoint</b> pode representar uma coleção de registros ou um registro individual.
+> Um <b>endpoint</b> pode representar uma coleção de registros ou um registro individual.
 
-<b>Exemplo:</b>
-
-<b>Coleção:</b> sistema.com.br/api/v1/produtos
-<b>Individual:</b> sistema.com.br/api/v1/produtos/42
+> Coleção
+```shell
+sistema.com.br/api/v1/produtos
+```
+> Individual
+```shell
+sistema.com.br/api/v1/produtos/42
+```
 
 ### 🔖 Verbos (CRUD)
 
@@ -98,9 +102,9 @@ Tudo que vem depois do `?` é chamado de `querystring`
 
 ### 🔖 Cabeçalhos da request
 
-- Accept: Específica o formato de arquivo.
-- Accept-Language: Define lingua de retorno.
-- Cache-Control: Específica se o conteúdo pode ser consumido do cache e em quanto tempo o cache é atualizado.
+- <b>Accept:</b> Específica o formato de arquivo.
+- <b>Accept-Language:</b> Define lingua de retorno.
+- <b>Cache-Control:</b> Específica se o conteúdo pode ser consumido do cache e em quanto tempo o cache é atualizado.
 
 `application/json` define um padrão de retorno.
 
@@ -119,7 +123,7 @@ Tudo que vem depois do `?` é chamado de `querystring`
 
 Preparar a Resposta.
 
-Detalhes avaliados da solicitação:
+> Detalhes avaliados da solicitação:
 
 - Na requisição existe query string?
 - Qual foi o verbo HTTP que realizou a ação?
@@ -127,7 +131,7 @@ Detalhes avaliados da solicitação:
 - Qual o formato requisitado?
 - Preparar os dados da coleção ou indivíduo do recurso solicitado.
 
-Dados retornados:
+> Dados retornados:
 
 - data (dados)
 - Cabeçalho
@@ -208,11 +212,11 @@ path('auth/', include('rest_framework.urls')),
 
 ## 🔨 Relações
 
-Existem 3 formas de retornar modelos relacionados em sua API.
+> Existem 3 formas de retornar modelos relacionados em sua API.
 
 ### 🔖 Nested Relationship
 
-Retorna os objetos conforme parametrizado no seu Serializer das avaliações relacionadas.
+> Retorna os objetos conforme parametrizado no seu Serializer das avaliações relacionadas.
 
 ```python
 avaliacoes = AvaliacaoSerializer(many=True, read_only=True)
@@ -220,7 +224,7 @@ avaliacoes = AvaliacaoSerializer(many=True, read_only=True)
 
 ### 🔖 HyperLinked Related Field
 
-Adicionar um link para acesso das avaliações relacionadas.
+> Adicionar um link para acesso das avaliações relacionadas.
 
 ```python
 avaliacoes = serializers.HyperlinkedRelatedField(
@@ -232,7 +236,7 @@ avaliacoes = serializers.HyperlinkedRelatedField(
 
 ### 🔖 Primary Key Related Field
 
-Adiciona apenas a chave primária (id) das avaliações relacionadas.
+> Adiciona apenas a chave primária (id) das avaliações relacionadas.
 
 ```python
 avaliacoes = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
@@ -261,7 +265,7 @@ Adiciona automaticamente 3 atributos ao retorno.
 }
 ```
 
-<b>Obs:</b> Em métodos sobrescritos você deverá adicionar manualmente a paginação conforme exemplo que ocorre em `CursoViewSet`:
+> <b>Obs:</b> Em métodos sobrescritos você deverá adicionar manualmente a paginação conforme exemplo que ocorre em `CursoViewSet`:
 
 ```python
 @action(detail=True, methods=['get'])
