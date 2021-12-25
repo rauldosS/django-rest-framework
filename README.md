@@ -1,8 +1,8 @@
 # 🏫 Escola
 
-django-rest-framework
-
 Projeto exemplo para entendimento e criação de aplicações Django com Django REST Framework.
+
+[Introdução às APIs REST](https://github.com/rauldosS/escola/blob/main/docs/intro/02-introducao-as-apis-rest.pdf)
 
 1. [Conceitos](#-conceitos)
     1. [APIs](#-api)
