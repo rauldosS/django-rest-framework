@@ -2,7 +2,7 @@
 
 Projeto exemplo para entendimento e criação de aplicações Django com Django REST Framework.
 
-![Django REST Framwork](https://github.com/rauldosS/escola/blob/main/images/01.png?raw=true)
+![Django REST Framwork](https://github.com/rauldosS/django-rest-framework/blob/main/images/01.png?raw=true)
 
 1. [Conceitos](#-conceitos)
     1. [APIs](#-api)
@@ -41,7 +41,7 @@ Interface de comunicação de aplicações de forma programática.
 
 HTTP é um design sem estado, ou seja, toda requisição é única. A responsabilidade de lembrar dos estados é do cliente.
 
-[Introdução às APIs REST](https://github.com/rauldosS/escola/blob/main/docs/intro/02-introducao-as-apis-rest.pdf)
+[Introdução às APIs REST](https://github.com/rauldosS/django-rest-framework/blob/main/docs/intro/02-introducao-as-apis-rest.pdf)
 
 ## 📘 Endpoints
 
@@ -453,7 +453,7 @@ def get_media_avaliacoes(self, obj):
 
 # 🔨 Insominia
 
-[JSON de importação Insominia](https://github.com/rauldosS/escola/blob/main/docs/escola.json)
+[JSON de importação Insominia](https://github.com/rauldosS/django-rest-framework/blob/main/docs/escola.json)
 
 ---
 
