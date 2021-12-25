@@ -2,7 +2,7 @@
 
 Projeto exemplo para entendimento e criação de aplicações Django com Django REST Framework.
 
-![Django REST Framwork](https://github.com/rauldosS/escola/blob/main/images/01.gif?raw=true)
+![Django REST Framwork](https://github.com/rauldosS/escola/blob/main/images/01.png?raw=true)
 
 1. [Conceitos](#-conceitos)
     1. [APIs](#-api)
