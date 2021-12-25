@@ -1,4 +1,4 @@
-# Escola
+# 🏫 Escola
 
 Escola com Django REST Framework
 
