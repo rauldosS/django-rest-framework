@@ -2,20 +2,37 @@
 
 Projeto exemplo para entendimento e criação de aplicações Django com Django REST Framework.
 
-1. Conceitos importantes.
-    1. Apis REST
-    2. Entendendo os Endpoints
-    3. Entendendo as Requests
-    4. Entendendo as Responses
-    5. Entendendo sobre segurança de APIs REST
-2. O que é o Django REST Framework
-3. Tópicos são seguidos de instruções para configuração e utilização do Django REST Framework.
-4. Ao final você encontrará as instruções para rodar o projeto completo em sua máquina.
+1. [Conceitos](#-conceitos)
+    1. [APIs](#-api)
+    2. [REST - Representation Stare Transfer](#-rest---representation-stare-transfer)
+    3. [Endpoints](#-endpoints)
+        1. [Boas práticas na criação de endpoints](#-boas-práticas-na-criação-de-endpoints)
+    4. [Requests](#-requests)
+        1. [Versionamento de APIs](#-versão-da-api)
+    5. [Responses](#-responses)
+    6. [Segurança de APIs REST](#-segurança)
+    7. [Django REST Framework (DRF)](#-django-rest-framework-drf)
+2. [Instalação e configuração básica](#-instalação-e-configuração)
+3. [Configuração intermediária](#-configuração-intermediária)
+    1. [ViewSets](#-viewsets)
+    2. [Routers](#-routers)
+    3. [Relações](#-relações)
+    4. [Paginação](#-paginação)
+4. [Configuração avançada](#-configuração-avançada)
+    1. [Autenticação via Token](#-autenticação-via-token)
+    2. [Fazendo uso de permissões](#-fazendo-uso-de-permissões)
+    3. [Limitando número de requisições com Throttling](#-limitando-número-de-requisições-com-throttling)
+    4. [Customizando a validação dos dados](#-customizando-a-validação-dos-dados)
+    5. [Customizando a serialização dos dados](#-customizando-a-serialização-dos-dados)
+5. [Testando APIs](#-testando-apis)
+6. [Insominia](#-insominia)
+7. [Abrir e rodar o projeto](#-abrir-e-rodar-o-projeto)
+
+[](#link)
 
 ---
+
 # 📚 Conceitos
-
-
 
 ## 📕 API
 
@@ -138,7 +155,7 @@ Dados retornados:
 
 ---
 
-# 🛠️ Instalação e configuração
+# 🛠️ Instalação e configuração básica
 
 1. Instale o django-rest-framework
 ```shell
@@ -193,7 +210,7 @@ path('auth/', include('rest_framework.urls')),
 
 Existem 3 formas de retornar modelos relacionados em sua API.
 
-### 📍 Nested Relationship
+### 🔖 Nested Relationship
 
 Retorna os objetos conforme parametrizado no seu Serializer das avaliações relacionadas.
 
@@ -201,7 +218,7 @@ Retorna os objetos conforme parametrizado no seu Serializer das avaliações rel
 avaliacoes = AvaliacaoSerializer(many=True, read_only=True)
 ```
 
-### 📍 HyperLinked Related Field
+### 🔖 HyperLinked Related Field
 
 Adicionar um link para acesso das avaliações relacionadas.
 
@@ -213,7 +230,7 @@ avaliacoes = serializers.HyperlinkedRelatedField(
 )
 ```
 
-### 📍 Primary Key Related Field
+### 🔖 Primary Key Related Field
 
 Adiciona apenas a chave primária (id) das avaliações relacionadas.
 
@@ -297,7 +314,7 @@ Configurações em `escola/settings.py`:
 python manage.py migrate
 ```
 
-### 📍 Para sobrescrever o modelo User utilize
+### 🔖 Para sobrescrever o modelo User utilize
 
 ```python
 from rest_framework.authtoken.models import Token
@@ -320,7 +337,7 @@ Permissões dizem respeito aos verbos HTTP (CRUD) que o usuário tem permissão 
 
 Através do `Administração do Django` é possível realizar essa configuração de permissão sobre um modelo específico para cada usuário sem tornar o usuário administrador.
 
-### 📍 Criação de sua própria classe que define permissões
+### 🔖 Criação de sua própria classe que define permissões
 
 1. Criação de um arquivo chamado `permissions.py` no diretório do app
     1.1 Exemplo em `cursos/permissions.py`
@@ -425,7 +442,7 @@ def get_media_avaliacoes(self, obj):
     return round(media * 2) / 2
 ```
 
-### 📍 Sugestão de performance
+### 🔖 Sugestão de performance
 
 Ao inves de criar uma função para atualizar a média em cada requisição, criar um campo no modelo e atualizar o campo a cada atualização.
 
@@ -434,8 +451,6 @@ Ao inves de criar uma função para atualizar a média em cada requisição, cri
 # 🔨 Insominia
 
 [JSON de importação Insominia]()
-
-# 🔨 Funcionalidades
 
 # 🛠️ Abrir e rodar o projeto
 
@@ -486,5 +501,5 @@ Rode o servidor de desenvolvimento:
 python manage.py runserver
 ```
 
-## 📍 Execução no ambiente Windows
+## 🔖 Execução no ambiente Windows
 ![alt text](https://github.com/rauldosS/technical-test-nexxera/blob/main/images/01.gif?raw=true)
