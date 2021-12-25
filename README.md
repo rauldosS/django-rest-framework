@@ -1,5 +1,7 @@
 # 🏫 Escola
 
+django-rest-framework
+
 Projeto exemplo para entendimento e criação de aplicações Django com Django REST Framework.
 
 1. [Conceitos](#-conceitos)
@@ -27,9 +29,6 @@ Projeto exemplo para entendimento e criação de aplicações Django com Django 
 5. [Testando APIs](#-testando-apis)
 6. [Insominia](#-insominia)
 7. [Abrir e rodar o projeto](#-abrir-e-rodar-o-projeto)
-
-[](#link)
-
 ---
 
 # 📚 Conceitos
@@ -42,7 +41,7 @@ Interface de comunicação de aplicações de forma programática.
 
 HTTP é um design sem estado, ou seja, toda requisição é única. A responsabilidade de lembrar dos estados é do cliente.
 
-[Introdução às APIs REST](https://github.com/rauldosS/django-rest-framework/blob/main/docs/intro/02-introducao-as-apis-rest.pdf)
+[Introdução às APIs REST](https://github.com/rauldosS/escola/blob/main/docs/intro/02-introducao-as-apis-rest.pdf)
 
 ## 📘 Endpoints
 
@@ -245,7 +244,7 @@ avaliacoes = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
 ## 🔨 Paginação
 
 
-Em `escola/settings.py` adicione ao `REST_FRAMEWORK`:
+> Em `escola/settings.py` adicione ao `REST_FRAMEWORK`:
 
 ```python
 REST_FRAMEWORK = {
@@ -255,7 +254,7 @@ REST_FRAMEWORK = {
 }
 ```
 
-Adiciona automaticamente 3 atributos ao retorno.
+> Adiciona automaticamente 3 atributos ao retorno.
 
 ```python
 {
@@ -284,17 +283,9 @@ Adiciona automaticamente 3 atributos ao retorno.
 
 # 🛠️ Configuração avançada
 
-Tópicos:
-
-1. Autenticação via Token
-2. Fazendo uso de permissões
-3. Limitando número de requisições com Throttling
-4. Customizando a validação dos dados
-5. Customizando a serialização dos dados
-
 ## 🔨 Autenticação via Token
 
-Configurações em `escola/settings.py`:
+> Configurações em `escola/settings.py`:
 
 1. Adicionar aos INSTALLED_APPS:
 ```python
@@ -331,15 +322,15 @@ token = Token.objects.create(user=admin)
 print(token.key)
 ```
 
-Token Admin: 11c573b2dab073aef36698a9600a43aa8cb70d99
+> Token Admin: 11c573b2dab073aef36698a9600a43aa8cb70d99
 
-<b>Obs:</b> É possível realizar a criação via `Administração do Django`
+> <b>Obs:</b> É possível realizar a criação via `Administração do Django`
 
 ## 🔨 Fazendo uso de permissões
 
-Permissões dizem respeito aos verbos HTTP (CRUD) que o usuário tem permissão para executar.
+> Permissões dizem respeito aos verbos HTTP (CRUD) que o usuário tem permissão para executar.
 
-Através do `Administração do Django` é possível realizar essa configuração de permissão sobre um modelo específico para cada usuário sem tornar o usuário administrador.
+> Através do `Administração do Django` é possível realizar essa configuração de permissão sobre um modelo específico para cada usuário sem tornar o usuário administrador.
 
 ### 🔖 Criação de sua própria classe que define permissões
 
@@ -361,9 +352,9 @@ class CursoViewSet(viewsets.ModelViewSet):
 
 ## 🔨 Limitando número de requisições com Throttling
 
-Similar a permissões, porém ele vai limitar as requisições por um determinado período para os clientes.
+> Similar a permissões, porém ele vai limitar as requisições por um determinado período para os clientes.
 
-A configuração será global configurada no `REST_FRAMEWORK` em `cursos/settings.py`:
+> A configuração será global configurada no `REST_FRAMEWORK` em `cursos/settings.py`:
 
 - Anônimos podem fazer podem fazer 5 requisições por minuto e
 - Usuários autenticados podem fazer 10 requisições por minuto.
@@ -384,7 +375,7 @@ A configuração será global configurada no `REST_FRAMEWORK` em `cursos/setting
 
 ## 🔨 Customizando a validação dos dados
 
-<b>Restrição:</b> Avaliações não podem ser maior que 5 (avaliacao).
+> <b>Restrição:</b> Avaliações não podem ser maior que 5 (avaliacao).
 
 <b>Criação de uma avaliação:</b> 
 
@@ -419,7 +410,7 @@ def validate_avaliacao(self, valor):
 
 ## 🔨 Customizando a serialização dos dados
 
-Adicionar atributo no retorno com a `média das avaliações`
+> Adicionar atributo no retorno com a `média das avaliações`
 
 1. Criar atributo e especificar o tipo
 ```python
@@ -448,13 +439,13 @@ def get_media_avaliacoes(self, obj):
 
 ### 🔖 Sugestão de performance
 
-Ao inves de criar uma função para atualizar a média em cada requisição, criar um campo no modelo e atualizar o campo a cada atualização.
+> Ao inves de criar uma função para atualizar a média em cada requisição, criar um campo no modelo e atualizar o campo a cada atualização.
 
 # 🛠️ Testando APIs
 
 # 🔨 Insominia
 
-[JSON de importação Insominia]()
+[JSON de importação Insominia](https://github.com/rauldosS/escola/blob/main/docs/escola.json)
 
 # 🛠️ Abrir e rodar o projeto
 
@@ -464,8 +455,8 @@ Ao inves de criar uma função para atualizar a média em cada requisição, cri
 
 1. Clone o repositório e entre na pasta:
 ```shell
-git clone https://github.com/rauldosS/technical-test-nexxera.git
-cd technical-test-nexxera
+git clone https://github.com/rauldosS/escola.git
+cd escola
 ```
 
 2. Crie um ambiente virtual:
