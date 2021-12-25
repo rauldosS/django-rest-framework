@@ -2,7 +2,7 @@
 
 Escola com Django REST Framework
 
-## Instalação e configuração
+# 🛠️ Instalação e configuração
 
 1. Instale o django-rest-framework
 ```shell
@@ -42,22 +42,22 @@ REST_FRAMEWORK = {
 path('auth/', include('rest_framework.urls')),
 ```
 
-# Intermediário
+# 🛠️ Configuração intermediária
 
-## ViewSets
+## 🔨 ViewSets
 
 [ViewSets](https://www.django-rest-framework.org/api-guide/viewsets/)
 
-## Routers
+## 🔨 Routers
 
 - Otimiza a criação de urls, gera automaticamente através do router as operações CRUD de apenas um modelo.
 - Sobrescreva o método get para acessar, por exemplo, todas a avaliações de um determinado curso `(v2/cursos/1/avaliacoes)`.
 
-# Relações
+## 🔨 Relações
 
 Existem 3 formas de retornar modelos relacionados em sua API.
 
-## Nested Relationship
+### 📍 Nested Relationship
 
 Retorna os objetos conforme parametrizado no seu Serializer das avaliações relacionadas.
 
@@ -65,7 +65,7 @@ Retorna os objetos conforme parametrizado no seu Serializer das avaliações rel
 avaliacoes = AvaliacaoSerializer(many=True, read_only=True)
 ```
 
-## HyperLinked Related Field
+### 📍 HyperLinked Related Field
 
 Adicionar um link para acesso das avaliações relacionadas.
 
@@ -77,7 +77,7 @@ avaliacoes = serializers.HyperlinkedRelatedField(
 )
 ```
 
-## Primary Key Related Field
+### 📍 Primary Key Related Field
 
 Adiciona apenas a chave primária (id) das avaliações relacionadas.
 
@@ -85,9 +85,50 @@ Adiciona apenas a chave primária (id) das avaliações relacionadas.
 avaliacoes = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
 ```
 
-## 🔨 Funcionalidades
+## 🔨 Paginação
 
-## 🛠️ Abrir e rodar o projeto
+Em `escola/settings.py` adicione ao `REST_FRAMEWORK`:
+
+```python
+REST_FRAMEWORK = {
+    ...
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 2
+}
+```
+
+Adiciona automaticamente 3 atributos ao retorno.
+
+```python
+{
+    "count": "<int:contagem de páginas>",
+    "next": "<link:página anterior>",
+    "previous": "<link:próxima página>",
+}
+```
+
+Obs: Em métodos sobrescritos você deverá adicionar manualmente a paginação conforme exemplo que ocorre em `CursoViewSet`:
+
+```python
+@action(detail=True, methods=['get'])
+    def avaliacoes(self, request, pk=None):
+        self.pagination_class.page_size = 2
+        avaliacoes = Avaliacao.objects.filter(curso_id=pk)
+        page = self.paginate_queryset(avaliacoes)
+
+        if page is not None:
+            serializer = AvaliacaoSerializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+
+        serializer = AvaliacaoSerializer(avaliacoes, many=True)
+        return Response(serializer.data)
+```
+
+# 🛠️ Configuração avançada
+
+# 🔨 Funcionalidades
+
+# 🛠️ Abrir e rodar o projeto
 
 **Instruções necessárias para abrir e executar o projeto**
 
@@ -136,5 +177,5 @@ Rode o servidor de desenvolvimento:
 python manage.py runserver
 ```
 
-### 📍 Execução no ambiente Windows
+## 📍 Execução no ambiente Windows
 ![alt text](https://github.com/rauldosS/technical-test-nexxera/blob/main/images/01.gif?raw=true)
