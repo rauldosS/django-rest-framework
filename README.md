@@ -465,8 +465,8 @@ def get_media_avaliacoes(self, obj):
 
 1. Clone o repositório e entre na pasta:
 ```shell
-git clone https://github.com/rauldosS/escola.git
-cd escola
+git clone https://github.com/rauldosS/django-rest-framework.git
+cd/django-rest-framework
 ```
 
 2. Crie um ambiente virtual:
