@@ -42,7 +42,48 @@ REST_FRAMEWORK = {
 path('auth/', include('rest_framework.urls')),
 ```
 
+# Intermediário
 
+## ViewSets
+
+[ViewSets](https://www.django-rest-framework.org/api-guide/viewsets/)
+
+## Routers
+
+- Otimiza a criação de urls, gera automaticamente através do router as operações CRUD de apenas um modelo.
+- Sobrescreva o método get para acessar, por exemplo, todas a avaliações de um determinado curso `(v2/cursos/1/avaliacoes)`.
+
+# Relações
+
+Existem 3 formas de retornar modelos relacionados em sua API.
+
+## Nested Relationship
+
+Retorna os objetos conforme parametrizado no seu Serializer das avaliações relacionadas.
+
+```python
+avaliacoes = AvaliacaoSerializer(many=True, read_only=True)
+```
+
+## HyperLinked Related Field
+
+Adicionar um link para acesso das avaliações relacionadas.
+
+```python
+avaliacoes = serializers.HyperlinkedRelatedField(
+    many=True,
+    read_only=True,
+    view_name='avaliacao-detail'
+)
+```
+
+## Primary Key Related Field
+
+Adiciona apenas a chave primária (id) das avaliações relacionadas.
+
+```python
+avaliacoes = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+```
 
 ## 🔨 Funcionalidades
 
