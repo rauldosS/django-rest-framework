@@ -1,6 +1,9 @@
 # 🏫 Escola
 
-Escola com Django REST Framework
+Projeto exemplo para criação de aplicações Django com Django REST Framework.
+
+1. Os próximos tópicos são instruções para configuração e utilização do Django REST Framework.
+2. Ao final você encontrará as instruções para rodar o projeto em sua máquina.
 
 # 🛠️ Instalação e configuração
 
