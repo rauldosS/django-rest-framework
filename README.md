@@ -198,6 +198,8 @@ REST_FRAMEWORK = {
 path('auth/', include('rest_framework.urls')),
 ```
 
+---
+
 # 🛠️ Configuração intermediária
 
 ## 🔨 ViewSets
@@ -280,6 +282,8 @@ REST_FRAMEWORK = {
         serializer = AvaliacaoSerializer(avaliacoes, many=True)
         return Response(serializer.data)
 ```
+
+---
 
 # 🛠️ Configuração avançada
 
@@ -441,11 +445,17 @@ def get_media_avaliacoes(self, obj):
 
 > Ao inves de criar uma função para atualizar a média em cada requisição, criar um campo no modelo e atualizar o campo a cada atualização.
 
+---
+
 # 🛠️ Testando APIs
+
+---
 
 # 🔨 Insominia
 
 [JSON de importação Insominia](https://github.com/rauldosS/escola/blob/main/docs/escola.json)
+
+---
 
 # 🛠️ Abrir e rodar o projeto
 
