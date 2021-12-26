@@ -4,35 +4,35 @@ Projeto exemplo para entendimento e criação de aplicações Django com Django 
 
 ![Django REST Framwork](https://github.com/rauldosS/django-rest-framework/blob/main/images/01.png?raw=true)
 
-1. [Conceitos](#-conceitos)
-    1. [APIs](#-api)
-    2. [REST - Representation Stare Transfer](#-rest---representation-stare-transfer)
-    3. [Endpoints](#-endpoints)
-        1. [Boas práticas na criação de endpoints](#-boas-práticas-na-criação-de-endpoints)
-    4. [Requests](#-requests)
-        1. [Versionamento de APIs](#-versão-da-api)
-    5. [Responses](#-responses)
-    6. [Segurança de APIs REST](#-segurança)
-    7. [Django REST Framework (DRF)](#-django-rest-framework-drf)
-2. [Instalação e configuração básica](#-instalação-e-configuração)
-3. [Configuração intermediária](#-configuração-intermediária)
-    1. [ViewSets](#-viewsets)
-    2. [Routers](#-routers)
-    3. [Relações](#-relações)
-    4. [Paginação](#-paginação)
-4. [Configuração avançada](#-configuração-avançada)
-    1. [Autenticação via Token](#-autenticação-via-token)
-    2. [Fazendo uso de permissões](#-fazendo-uso-de-permissões)
-    3. [Limitando número de requisições com Throttling](#-limitando-número-de-requisições-com-throttling)
-    4. [Customizando a validação dos dados](#-customizando-a-validação-dos-dados)
-    5. [Customizando a serialização dos dados](#-customizando-a-serialização-dos-dados)
-5. [Testando APIs](#-testando-apis)
-    1. [Instalando e utilizando o módulo requests](#-instalando-e-utilizando-o-módulo-requests)
-    2. [Testando os métodos GET, POST, PUT e DELETE](#-testando-os-métodos-get-post-put-e-delete)
-    3. [Instalando e utilizando o módulo JSONPATH](#-instalando-e-utilizando-o-módulo-jsonpath)
-    4. [Testando com Pytest](#-testando-com-pytest)
-6. [Insominia](#-insominia)
-7. [Abrir e rodar o projeto escola](#-abrir-e-rodar-o-projeto)
+1. [📚 Conceitos](#-conceitos)
+    1. [📕 APIs](#-api)
+    2. [📗 REST - Representation Stare Transfer](#-rest---representation-stare-transfer)
+    3. [📘 Endpoints](#-endpoints)
+        1. [🔖 Boas práticas na criação de endpoints](#-boas-práticas-na-criação-de-endpoints)
+    4. [🔖 Requests](#-requests)
+        1. [🔖 Versionamento de APIs](#-versão-da-api)
+    5. [🔖 Responses](#-responses)
+    6. [🔖 Segurança de APIs REST](#-segurança)
+    7. [🔖 Django REST Framework (DRF)](#-django-rest-framework-drf)
+2. [🛠️ Instalação e configuração básica](#-instalação-e-configuração)
+3. [🛠️ Configuração intermediária](#-configuração-intermediária)
+    1. [🔖 ViewSets](#-viewsets)
+    2. [🔖 Routers](#-routers)
+    3. [🔖 Relações](#-relações)
+    4. [🔖 Paginação](#-paginação)
+4. [🛠️ Configuração avançada](#-configuração-avançada)
+    1. [🔖 Autenticação via Token](#-autenticação-via-token)
+    2. [🔖 Fazendo uso de permissões](#-fazendo-uso-de-permissões)
+    3. [🔖 Limitando número de requisições com Throttling](#-limitando-número-de-requisições-com-throttling)
+    4. [🔖 Customizando a validação dos dados](#-customizando-a-validação-dos-dados)
+    5. [🔖 Customizando a serialização dos dados](#-customizando-a-serialização-dos-dados)
+5. [👨‍💻 Testando APIs](#-testando-apis)
+    1. [🔖 Instalando e utilizando o módulo requests](#-instalando-e-utilizando-o-módulo-requests)
+    2. [🔖 Testando os métodos GET, POST, PUT e DELETE](#-testando-os-métodos-get-post-put-e-delete)
+    3. [🔖 Instalando e utilizando o módulo JSONPATH](#-instalando-e-utilizando-o-módulo-jsonpath)
+    4. [🔖 Testando com Pytest](#-testando-com-pytest)
+6. [👨‍💻 Insominia](#-insominia)
+7. [🕹️ Abrir e rodar o projeto escola](#-abrir-e-rodar-o-projeto)
 
 ---
 
@@ -452,7 +452,7 @@ def get_media_avaliacoes(self, obj):
 
 ---
 
-# 🛠️ Testando APIs
+# 👨‍💻 Testando APIs
 
 > A pasta `tests` no diretório raiz contém todos os testes com descrição em cada arquivo.
 
@@ -503,13 +503,13 @@ pytest .\tests\test_pytest.py
 
 ---
 
-# 🔨 Insominia
+# 👨‍💻 Insominia
 
 [JSON de importação Insominia](https://github.com/rauldosS/django-rest-framework/blob/main/docs/escola.json)
 
 ---
 
-# 🛠️ Abrir e rodar o projeto
+# 🕹️ Abrir e rodar o projeto
 
 **Instruções necessárias para abrir e executar o projeto**
 
