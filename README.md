@@ -472,10 +472,10 @@ pip install requests
 
 ## 🔨 Testando os métodos GET, POST, PUT e DELETE
 
-🔖[Testando o método GET](https://github.com/rauldosS/django-rest-framework/blob/main/tests/requests/get.py)
-🔖[Testando o método POST](https://github.com/rauldosS/django-rest-framework/blob/main/tests/requests/post.py)
-🔖[Testando o método PUT](https://github.com/rauldosS/django-rest-framework/blob/main/tests/requests/put.py)
-🔖[Testando o método DELETE](https://github.com/rauldosS/django-rest-framework/blob/main/tests/requests/delete.py)
+- 🔖[Testando o método GET](https://github.com/rauldosS/django-rest-framework/blob/main/tests/requests/get.py)
+- 🔖[Testando o método POST](https://github.com/rauldosS/django-rest-framework/blob/main/tests/requests/post.py)
+- 🔖[Testando o método PUT](https://github.com/rauldosS/django-rest-framework/blob/main/tests/requests/put.py)
+- 🔖[Testando o método DELETE](https://github.com/rauldosS/django-rest-framework/blob/main/tests/requests/delete.py)
 
 ## 🔨 Instalando e utilizando o módulo JSONPATH
 
