@@ -92,7 +92,7 @@ Indica uma ação.
 - `U` `Update` `PUT`
 - `D` `Delete` `DELETE`
 
-- 📁 [Entendendo os Endpoints](https://github.com/rauldosS/django-rest-framework/blob/main/docs/intro/03-entendendo-os-endpoints.pdf)
+📁 [Entendendo os Endpoints](https://github.com/rauldosS/django-rest-framework/blob/main/docs/intro/03-entendendo-os-endpoints.pdf)
 
 ## 📙 Requests
 
