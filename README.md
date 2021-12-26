@@ -48,7 +48,7 @@ Interface de comunicação de aplicações de forma programática.
 
 HTTP é um design sem estado, ou seja, toda requisição é única. A responsabilidade de lembrar dos estados é do cliente.
 
-[Introdução às APIs REST](https://github.com/rauldosS/django-rest-framework/blob/main/docs/intro/02-introducao-as-apis-rest.pdf)
+- 📁 [Introdução às APIs REST](https://github.com/rauldosS/django-rest-framework/blob/main/docs/intro/02-introducao-as-apis-rest.pdf)
 
 ## 📘 Endpoints
 
@@ -92,7 +92,7 @@ Indica uma ação.
 - `U` `Update` `PUT`
 - `D` `Delete` `DELETE`
 
-[Entendendo os Endpoints](https://github.com/rauldosS/django-rest-framework/blob/main/docs/intro/03-entendendo-os-endpoints.pdf)
+- 📁 [Entendendo os Endpoints](https://github.com/rauldosS/django-rest-framework/blob/main/docs/intro/03-entendendo-os-endpoints.pdf)
 
 ## 📙 Requests
 
@@ -123,7 +123,7 @@ Tudo que vem depois do `?` é chamado de `querystring`
 /api/v2/produtos
 ```
 
-[Entendendo as Requests](https://github.com/rauldosS/django-rest-framework/blob/main/docs/intro/04-entendendo-as-requests.pdf)
+- 📁 [Entendendo as Requests](https://github.com/rauldosS/django-rest-framework/blob/main/docs/intro/04-entendendo-as-requests.pdf)
 
 ## 📘 Responses
 
@@ -146,7 +146,7 @@ Preparar a Resposta.
     - Expires: Até quando este dado pode ser considerado atual
     - Status: 200 OK (código de status HTTP)
 
-[Entendendo as Responses](https://github.com/rauldosS/django-rest-framework/blob/main/docs/intro/05-entendendo-as-responses.pdf)
+- 📁 [Entendendo as Responses](https://github.com/rauldosS/django-rest-framework/blob/main/docs/intro/05-entendendo-as-responses.pdf)
 
 ## 🔐 Segurança
 
@@ -156,7 +156,7 @@ Preparar a Resposta.
     - Token (chave publica)
 - Autorização (o que você pode fazer)
 
-[Entendendo sobre a segurança de APIs REST](https://github.com/rauldosS/django-rest-framework/blob/main/docs/intro/06-entendendo-sobre-a-seguranca-de-apis-rest.pdf)
+- 📁 [Entendendo sobre a segurança de APIs REST](https://github.com/rauldosS/django-rest-framework/blob/main/docs/intro/06-entendendo-sobre-a-seguranca-de-apis-rest.pdf)
 
 
 ## 📘 Django REST Framework (DRF)
@@ -211,7 +211,7 @@ path('auth/', include('rest_framework.urls')),
 
 ## 🔨 ViewSets
 
-[ViewSets](https://www.django-rest-framework.org/api-guide/viewsets/)
+- 📁 [ViewSets](https://www.django-rest-framework.org/api-guide/viewsets/)
 
 ## 🔨 Routers
 
@@ -468,14 +468,14 @@ Módulo para fazer requisições.
 pip install requests
 ```
 
-[Arquivos de testes para requests](https://github.com/rauldosS/django-rest-framework/blob/main/tests/requests)
+- 📁 [Arquivos de testes para requests](https://github.com/rauldosS/django-rest-framework/blob/main/tests/requests)
 
 ## 🔨 Testando os métodos GET, POST, PUT e DELETE
 
-- 🔖[Testando o método GET](https://github.com/rauldosS/django-rest-framework/blob/main/tests/requests/get.py)
-- 🔖[Testando o método POST](https://github.com/rauldosS/django-rest-framework/blob/main/tests/requests/post.py)
-- 🔖[Testando o método PUT](https://github.com/rauldosS/django-rest-framework/blob/main/tests/requests/put.py)
-- 🔖[Testando o método DELETE](https://github.com/rauldosS/django-rest-framework/blob/main/tests/requests/delete.py)
+- [🔖 Testando o método GET](https://github.com/rauldosS/django-rest-framework/blob/main/tests/requests/get.py)
+- [🔖 Testando o método POST](https://github.com/rauldosS/django-rest-framework/blob/main/tests/requests/post.py)
+- [🔖 Testando o método PUT](https://github.com/rauldosS/django-rest-framework/blob/main/tests/requests/put.py)
+- [🔖 Testando o método DELETE](https://github.com/rauldosS/django-rest-framework/blob/main/tests/requests/delete.py)
 
 ## 🔨 Instalando e utilizando o módulo JSONPATH
 
@@ -485,7 +485,7 @@ pip install jsonpath
 
 > <b>Vantagem:</b> acessar diretamente os dados com maior facilidade e realizar filtros nativamente
 
-[Arquivos de testes para jsonpath](https://github.com/rauldosS/django-rest-framework/blob/main/tests/jsonpath.py)
+- [📁 Arquivos de testes para jsonpath](https://github.com/rauldosS/django-rest-framework/blob/main/tests/jsonpath.py)
 
 ## 🔨 Testando com Pytest
 
@@ -493,7 +493,7 @@ pip install jsonpath
 pip install pytest
 ```
 
-🔖[Pytest](https://github.com/rauldosS/django-rest-framework/blob/main/tests/requests/test_pytest.py)
+- [📁 Pytest](https://github.com/rauldosS/django-rest-framework/blob/main/tests/requests/test_pytest.py)
 
 > Comando para executar testes pelo arquivo pytest:
 
@@ -505,7 +505,7 @@ pytest .\tests\test_pytest.py
 
 ## 🔨 Insominia
 
-[JSON de importação Insominia](https://github.com/rauldosS/django-rest-framework/blob/main/docs/escola.json)
+- 📁 [JSON de importação Insominia](https://github.com/rauldosS/django-rest-framework/blob/main/docs/escola.json)
 
 ---
 
