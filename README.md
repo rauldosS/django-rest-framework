@@ -1,4 +1,4 @@
-# 🏫 Escola
+# 🏫 Django REST Framework
 
 Projeto exemplo para entendimento e criação de aplicações Django com Django REST Framework.
 
@@ -27,8 +27,12 @@ Projeto exemplo para entendimento e criação de aplicações Django com Django 
     4. [Customizando a validação dos dados](#-customizando-a-validação-dos-dados)
     5. [Customizando a serialização dos dados](#-customizando-a-serialização-dos-dados)
 5. [Testando APIs](#-testando-apis)
+    1. [Instalando e utilizando o módulo requests]()
+    2. [Testando os métodos GET, POST, PUT e DELETE]()
+    3. [Instalando e utilizando o módulo JSONPATH]()
+    4. [Testando com Pytest]()
 6. [Insominia](#-insominia)
-7. [Abrir e rodar o projeto](#-abrir-e-rodar-o-projeto)
+7. [Abrir e rodar o projeto escola](#-abrir-e-rodar-o-projeto)
 ---
 
 # 📚 Conceitos
@@ -448,6 +452,53 @@ def get_media_avaliacoes(self, obj):
 ---
 
 # 🛠️ Testando APIs
+
+> A pasta `tests` no diretório raiz contém todos os testes com descrição em cada arquivo.
+
+> Crie testes que façam sentido para a sua aplicação!
+
+## 🔨 Instalando e utilizando o módulo requests
+
+Módulo para fazer requisições.
+
+```shell
+pip install requests
+```
+
+[Arquivos de testes para requests](https://github.com/rauldosS/django-rest-framework/blob/main/tests/requests)
+
+## 🔨 Testando os métodos GET, POST, PUT e DELETE
+
+🔖[Testando o método GET](https://github.com/rauldosS/django-rest-framework/blob/main/tests/requests/get.py)
+🔖[Testando o método POST](https://github.com/rauldosS/django-rest-framework/blob/main/tests/requests/post.py)
+🔖[Testando o método PUT](https://github.com/rauldosS/django-rest-framework/blob/main/tests/requests/put.py)
+🔖[Testando o método DELETE](https://github.com/rauldosS/django-rest-framework/blob/main/tests/requests/delete.py)
+
+## 🔨 Instalando e utilizando o módulo JSONPATH
+
+```shell
+pip install jsonpath
+```
+
+> <b>Vantagem:</b> acessar diretamente os dados com maior facilidade e realizar filtros nativamente
+
+[Arquivos de testes para jsonpath](https://github.com/rauldosS/django-rest-framework/blob/main/tests/jsonpath.py)
+
+## 🔨 Testando com Pytest
+
+```shell
+pip install pytest
+```
+
+🔖[Pytest](https://github.com/rauldosS/django-rest-framework/blob/main/tests/requests/test_pytest.py)
+
+> Comando para executar testes pelo arquivo pytest:
+
+```shell
+pytest .\tests\test_pytest.py
+```
+
+> <b>Obs:</b> o pk/id dos métodos PUT e POST (requests) deve ser atualizado para realização dos testes.
 
 ---
 
