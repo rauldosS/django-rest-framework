@@ -27,12 +27,13 @@ Projeto exemplo para entendimento e criação de aplicações Django com Django 
     4. [Customizando a validação dos dados](#-customizando-a-validação-dos-dados)
     5. [Customizando a serialização dos dados](#-customizando-a-serialização-dos-dados)
 5. [Testando APIs](#-testando-apis)
-    1. [Instalando e utilizando o módulo requests]()
-    2. [Testando os métodos GET, POST, PUT e DELETE]()
-    3. [Instalando e utilizando o módulo JSONPATH]()
-    4. [Testando com Pytest]()
+    1. [Instalando e utilizando o módulo requests](#-instalando-e-utilizando-o-módulo-requests)
+    2. [Testando os métodos GET, POST, PUT e DELETE](#-testando-os-métodos-get-post-put-e-delete)
+    3. [Instalando e utilizando o módulo JSONPATH](#-instalando-e-utilizando-o-módulo-jsonpath)
+    4. [Testando com Pytest](#-testando-com-pytest)
 6. [Insominia](#-insominia)
 7. [Abrir e rodar o projeto escola](#-abrir-e-rodar-o-projeto)
+
 ---
 
 # 📚 Conceitos
