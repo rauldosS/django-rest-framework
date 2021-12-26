@@ -493,7 +493,7 @@ pip install jsonpath
 pip install pytest
 ```
 
-- [📁 Pytest](https://github.com/rauldosS/django-rest-framework/blob/main/tests/requests/test_pytest.py)
+📁 [Pytest](https://github.com/rauldosS/django-rest-framework/blob/main/tests/requests/test_pytest.py)
 
 > Comando para executar testes pelo arquivo pytest:
 
