@@ -33,7 +33,7 @@ Projeto exemplo para entendimento e criação de aplicações Django com Django 
     - [🔖 Testando os métodos GET, POST, PUT e DELETE](#-testando-os-métodos-get-post-put-e-delete)
     - [🔖 Instalando e utilizando o módulo JSONPATH](#-instalando-e-utilizando-o-módulo-jsonpath)
     - [🔖 Testando com Pytest](#-testando-com-pytest)
-    - [👨‍💻 Insominia](#-insominia)
+    - [🔖 Insominia](#-insominia)
 - [🕹️ Abrir e rodar o projeto escola](#-abrir-e-rodar-o-projeto)
 
 ---
