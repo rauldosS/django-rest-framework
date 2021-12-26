@@ -503,9 +503,7 @@ pytest .\tests\test_pytest.py
 
 > <b>Obs:</b> o pk/id dos métodos PUT e POST (requests) deve ser atualizado para realização dos testes.
 
----
-
-# 👨‍💻 Insominia
+## 🔨 Insominia
 
 [JSON de importação Insominia](https://github.com/rauldosS/django-rest-framework/blob/main/docs/escola.json)
 
