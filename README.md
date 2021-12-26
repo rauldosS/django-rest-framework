@@ -16,8 +16,8 @@ Projeto exemplo para entendimento e criação de aplicações Django com Django 
     - [🔖 Responses](#-responses)
     - [🔐 Segurança de APIs REST](#-segurança)
     - [🔖 Django REST Framework (DRF)](#-django-rest-framework-drf)
-- [🛠️ Instalação e configuração básica](#-instalação-e-configuração)
-- [🛠️ Configuração intermediária](#-configuração-intermediária)
+- [📖 Instalação e configuração básica](#-instalação-e-configuração)
+- [📊 Configuração intermediária](#-configuração-intermediária)
     - [🔖 ViewSets](#-viewsets)
     - [🔖 Routers](#-routers)
     - [🔖 Relações](#-relações)
@@ -33,7 +33,7 @@ Projeto exemplo para entendimento e criação de aplicações Django com Django 
     - [🔖 Testando os métodos GET, POST, PUT e DELETE](#-testando-os-métodos-get-post-put-e-delete)
     - [🔖 Instalando e utilizando o módulo JSONPATH](#-instalando-e-utilizando-o-módulo-jsonpath)
     - [🔖 Testando com Pytest](#-testando-com-pytest)
-- [👨‍💻 Insominia](#-insominia)
+    - [👨‍💻 Insominia](#-insominia)
 - [🕹️ Abrir e rodar o projeto escola](#-abrir-e-rodar-o-projeto)
 
 ---
@@ -165,7 +165,7 @@ Preparar a Resposta.
 
 ---
 
-# 🛠️ Instalação e configuração básica
+# 📖 Instalação e configuração básica
 
 1. Instale o django-rest-framework
 ```shell
@@ -207,7 +207,7 @@ path('auth/', include('rest_framework.urls')),
 
 ---
 
-# 🛠️ Configuração intermediária
+# 📊 Configuração intermediária
 
 ## 🔨 ViewSets
 
