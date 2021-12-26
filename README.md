@@ -5,14 +5,14 @@ Projeto exemplo para entendimento e criação de aplicações Django com Django 
 ![Django REST Framwork](https://github.com/rauldosS/django-rest-framework/blob/main/images/01.png?raw=true)
 
 1. [📚 Conceitos](#-conceitos)
-    1. [📕 APIs](#-api)
-    2. [📗 REST - Representation Stare Transfer](#-rest---representation-stare-transfer)
-    3. [📘 Endpoints](#-endpoints)
-        1. [🔖 Boas práticas na criação de endpoints](#-boas-práticas-na-criação-de-endpoints)
+    1 [📕 APIs](#-api)
+    2 [📗 REST - Representation Stare Transfer](#-rest---representation-stare-transfer)
+    3 [📘 Endpoints](#-endpoints)
+        1. [🗃️ Boas práticas na criação de endpoints](#-boas-práticas-na-criação-de-endpoints)
     4. [🔖 Requests](#-requests)
         1. [🔖 Versionamento de APIs](#-versão-da-api)
     5. [🔖 Responses](#-responses)
-    6. [🔖 Segurança de APIs REST](#-segurança)
+    6. [🔐 Segurança de APIs REST](#-segurança)
     7. [🔖 Django REST Framework (DRF)](#-django-rest-framework-drf)
 2. [🛠️ Instalação e configuração básica](#-instalação-e-configuração)
 3. [🛠️ Configuração intermediária](#-configuração-intermediária)
@@ -20,7 +20,7 @@ Projeto exemplo para entendimento e criação de aplicações Django com Django 
     2. [🔖 Routers](#-routers)
     3. [🔖 Relações](#-relações)
     4. [🔖 Paginação](#-paginação)
-4. [🛠️ Configuração avançada](#-configuração-avançada)
+4. [🔐 Configuração avançada](#-configuração-avançada)
     1. [🔖 Autenticação via Token](#-autenticação-via-token)
     2. [🔖 Fazendo uso de permissões](#-fazendo-uso-de-permissões)
     3. [🔖 Limitando número de requisições com Throttling](#-limitando-número-de-requisições-com-throttling)
@@ -68,7 +68,7 @@ HTTP é um design sem estado, ou seja, toda requisição é única. A responsabi
 
 `Estas URIs são os endpoints`
 
-### 🔖 Boas práticas na criação de endpoints
+### 🗃️ Boas práticas na criação de endpoints
 
 > Um <b>endpoint</b> pode representar uma coleção de registros ou um registro individual.
 
@@ -146,7 +146,7 @@ Preparar a Resposta.
 
 [Entendendo as Responses](https://github.com/rauldosS/django-rest-framework/blob/main/docs/intro/05-entendendo-as-responses.pdf)
 
-## 📘 Segurança
+## 🔐 Segurança
 
 - Fazendo uso de cache.
 - Limitar número de requisições por período (segundos).
@@ -290,7 +290,7 @@ REST_FRAMEWORK = {
 
 ---
 
-# 🛠️ Configuração avançada
+# 🔐 Configuração avançada
 
 ## 🔨 Autenticação via Token
 
